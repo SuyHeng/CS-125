@@ -2,13 +2,14 @@
 using namespace std;
 int main()
 {
-    int gradeA, gradeB, gradeC;
-    int gradeD, gradeF;
-    int num, count;
+    int gradeA = 0, gradeB = 0, gradeC = 0;
+    int gradeD = 0, gradeF = 0;
+    int num, count = 0;
 
-    cout << "Enter Exam Scores: ";
-    cin >> num;
     do {
+            cout << "Enter Exam Scores: ";
+            cin >> num;
+
         if (num >= 90 && num <= 100)
             {
                 gradeA++;
@@ -29,12 +30,9 @@ int main()
             {
                 gradeF++;
             }
-            count++
+            count++;
     }
     while (num != -1);
-    {
-        cin >> num;
-    }
 
         cout << "Number of A's: " << gradeA << endl; 
         cout << "Number of B's: " << gradeB << endl; 
