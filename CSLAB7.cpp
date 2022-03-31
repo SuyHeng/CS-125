@@ -6,7 +6,10 @@ using namespace std;
 int main ()
 {
     char Menu;
+    bool loop = true;
 
+do
+{
 mainmenu:
     cout << "MAIN MENU: Select Laboratory Activity" << endl;
     cout << "[1] Arithmetic Operators and Keyboard Inputs" << endl;
@@ -48,7 +51,7 @@ mainmenu:
             cout << "SELECT PROGRAMS: " << endl;
             cout << "[1] Circumfrences and Area" << endl;
             cout << "[2] Temperature Conversion" << endl;
-            cout << "[X] Go back to Main Menu" << endl;
+            cout << "[B] Go back to Main Menu" << endl;
             cout << "Your Choice: ";
             cin >> Menu;
             
@@ -92,7 +95,7 @@ mainmenu:
                 }
                 break;
 
-                case 'X':
+                case 'B':
                 {
                     goto mainmenu;
                 }
@@ -163,12 +166,11 @@ mainmenu:
 
         case '5':
         {
-            int num;
+            int num, i, f;
             bool isPrime = true;
-
+    
             cout << "Enter your number: ";
             cin >> num;
-
             if (num == 0 || num == 1)
             {
                 isPrime = false;
@@ -183,13 +185,16 @@ mainmenu:
                 }
             }
     
-            if (isPrime){
+            if (isPrime)
             cout << num << " is a Prime number." << endl;
+            else
+            cout << num << " is a Composite number." << endl;
+            cout << "Factors of " << num << " are: " ;
+            for (f = 1; f <= num; f++)
+            {
+                if (num % f == 0)
+                cout << f << " ";
             }
-            else{
-            cout << num << " is not a Prime number." << endl;
-            }
-
         }
         break;
 
@@ -241,9 +246,15 @@ mainmenu:
             goto mainmenu;
         }
         break;
-
-
     }
+
+    if (loop != false)
+    {
+        cout << "Press any key for mainmenu" << endl;
+        cin >> Menu;
+    }
+} while (loop == true);
+
 
 
 }
